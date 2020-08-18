@@ -24,8 +24,8 @@
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/favicon.ico --prune=true --out=release-builds",
-    "package-win": "electron-packager . pickji-admin-app --overwrite --platform=win32 --arch=all --prune=true --icon=assets/favicon.ico --out=release-builds",
-    "package-linux": "electron-packager . pickji-admin-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/favicon.ico --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-app --overwrite --platform=win32 --arch=all --prune=true --icon=assets/favicon.ico --out=release-builds",
+    "package-linux": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/favicon.ico --prune=true --out=release-builds",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
