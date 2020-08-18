@@ -1,7 +1,7 @@
 {
   "name": "electron-app",
   "version": "1.0.0",
-  "description": "Creating Desktop Application with electron js ",
+  "description": "Sample of Desktop Application Using JavaScript",
   "main": "index.js",
   "build": {
     "appId": "com.ankit.electron",
