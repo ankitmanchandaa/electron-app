@@ -3,12 +3,31 @@
   "version": "1.0.0",
   "description": "Creating Desktop Application with electron js ",
   "main": "index.js",
+  "build": {
+    "appId": "com.ankit.electron",
+    "productName": "electron-app",
+    "directories": {
+      "output": "release",
+      "buildResources": "dist"
+    },
+    "asar": true,
+    "win": {
+      "icon": "./assets/ankit.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "runAfterFinish": false
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "electron": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds", 
-    "package-win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron App\"", 
-    "package-linux": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64  --prune=true --out=release-builds" 
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/favicon.ico --prune=true --out=release-builds",
+    "package-win": "electron-packager . pickji-admin-app --overwrite --platform=win32 --arch=all --prune=true --icon=assets/favicon.ico --out=release-builds",
+    "package-linux": "electron-packager . pickji-admin-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/favicon.ico --prune=true --out=release-builds",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -20,8 +39,9 @@
     "url": "https://github.com/ankitmanchandaa/electron-app/issues"
   },
   "homepage": "https://github.com/ankitmanchandaa/electron-app#readme",
-  "dependencies": {
-    "electron": "^2.0.2",
-    "electron-packager": "^12.1.0"
+  "devDependencies": {
+    "electron": "^6.0.5",
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.5"
   }
 }
